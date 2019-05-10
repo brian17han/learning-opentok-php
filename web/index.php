@@ -112,7 +112,7 @@ $app->post('/archive/start', 'cors', function () use ($app) {
         'name' => 'Brazen1',
         'resolution' => '1280x720'
     );
-    $archive = $app->opentok->startArchive($sessionId, $archiveOptions);
+    $archive = $app->opentok->startArchive($sessionId, 'Brazen1');
     $app->response->headers->set('Content-Type', 'application/json');
     echo json_encode($archive->toJson());
 });

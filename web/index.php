@@ -109,10 +109,10 @@ $app->post('/archive/start', 'cors', function () use ($app) {
     $data = json_decode($json, true);
     $sessionId = $data['sessionId'];
     $archiveOptions = array(
-        'name' => 'Brazen1',
+        'name' => 'Brazen2',
         'resolution' => '1280x720'
     );
-    $archive = $app->opentok->startArchive($sessionId, 'Brazen1');
+    $archive = $app->opentok->startArchive($sessionId, $archiveOptions);
     $app->response->headers->set('Content-Type', 'application/json');
     echo json_encode($archive->toJson());
 });
